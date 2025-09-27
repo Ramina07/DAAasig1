@@ -1,6 +1,5 @@
 public class MergeSort {
 
-    // Основной метод для сортировки
     public static void sort(int[] arr) {
         if (arr.length < 2) {
             return;  // Если массив содержит меньше двух элементов, он уже отсортирован
@@ -15,6 +14,7 @@ public class MergeSort {
         System.arraycopy(arr, mid, right, 0, arr.length - mid); // Копируем правую часть
 
         // Рекурсивно сортируем обе части
+        Metrics.incrementRecursionDepth();  // Увеличиваем глубину рекурсии
         sort(left);
         sort(right);
 
@@ -22,27 +22,31 @@ public class MergeSort {
         merge(arr, left, right);
     }
 
-    // Метод для слияния двух отсортированных массивов
     private static void merge(int[] arr, int[] left, int[] right) {
         int i = 0, j = 0, k = 0;
 
         // Слияние элементов до тех пор, пока не обработаем один из массивов
         while (i < left.length && j < right.length) {
+            Metrics.incrementComparisons();  // Увеличиваем количество сравнений
             if (left[i] <= right[j]) {
                 arr[k++] = left[i++];
+                Metrics.incrementAssignments();  // Увеличиваем количество присваиваний
             } else {
                 arr[k++] = right[j++];
+                Metrics.incrementAssignments();  // Увеличиваем количество присваиваний
             }
         }
 
         // Копируем оставшиеся элементы из левого массива (если они есть)
         while (i < left.length) {
             arr[k++] = left[i++];
+            Metrics.incrementAssignments();  // Увеличиваем количество присваиваний
         }
 
         // Копируем оставшиеся элементы из правого массива (если они есть)
         while (j < right.length) {
             arr[k++] = right[j++];
+            Metrics.incrementAssignments();  // Увеличиваем количество присваиваний
         }
     }
 }
