@@ -1,38 +1,39 @@
+package org.example;
+
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class QuickSortTest {
+public class MergeSortTest {
 
     @Test
-    public void testQuickSort() {
+    public void testMergeSort() {
         int[] input = {5, 2, 9, 1, 5, 6};
         int[] expected = {1, 2, 5, 5, 6, 9};
-        QuickSort.sort(input);
+        MergeSort.sort(input);
         assertArrayEquals(expected, input);
     }
 
     @Test
-    public void testQuickSortEmptyArray() {
+    public void testMergeSortEmptyArray() {
         int[] input = {};
         int[] expected = {};
-        QuickSort.sort(input);
+        MergeSort.sort(input);
         assertArrayEquals(expected, input);
     }
 
     @Test
-    public void testQuickSortSingleElement() {
+    public void testMergeSortSingleElement() {
         int[] input = {7};
         int[] expected = {7};
-        QuickSort.sort(input);
+        MergeSort.sort(input);
         assertArrayEquals(expected, input);
     }
 
     @Test
-    public void testQuickSortNegativeNumbers() {
+    public void testMergeSortNegativeNumbers() {
         int[] input = {-3, -1, -4, -2, -5};
         int[] expected = {-5, -4, -3, -2, -1};
-        QuickSort.sort(input);
+        MergeSort.sort(input);
         assertArrayEquals(expected, input);
     }
 }
-

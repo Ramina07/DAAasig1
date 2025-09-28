@@ -1,4 +1,9 @@
-public class MergeSort {
+package org.example;
+
+public final class MergeSort {
+
+    // Устанавливаем порог для использования insertion sort
+    private static final int CUTOFF = 24; // на малых n лучше использовать insertion sort
 
     public static void sort(int[] arr) {
         if (arr.length < 2) {
@@ -48,6 +53,20 @@ public class MergeSort {
         while (j < right.length) {
             arr[k++] = right[j++];
             Metrics.incrementAssignments();  // Увеличиваем количество присваиваний
+        }
+    }
+
+    // --- Insertion Sort (для малых массивов) ---
+    public static void insertionSort(int[] a, int lo, int hi) {
+        for (int i = lo + 1; i <= hi; i++) {
+            int x = a[i], j = i - 1;
+            while (j >= lo && a[j] > x) {
+                a[j + 1] = a[j];
+                Metrics.incrementAssignments();  // учёт присваиваний
+                j--;
+            }
+            a[j + 1] = x;
+            Metrics.incrementAssignments();  // учёт присваиваний
         }
     }
 }
