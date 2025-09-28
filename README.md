@@ -145,8 +145,7 @@ GC/allocations: reusable buffer in MergeSort reduces pressure; Select mostly in-
 
 Cutoff: improves small-n constants by switching to insertion sort.
 
-Put images under docs/plots/ and embed:
-![MergeSort time](docs/plots/merge_time.png)
+
 
 6) Testing (correctness & properties)
 
