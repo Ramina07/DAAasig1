@@ -227,3 +227,24 @@ release: v1.0
 
 
 Create a PR for each feature; squash-merge into main.
+
+## Release v1.0
+
+This version includes:
+- Implemented MergeSort, QuickSort, Deterministic Select, and Closest Pair algorithms.
+- Benchmarks for sorting algorithms (Select vs Sort).
+- CSV reporting with the results of the benchmarks.
+
+### Results
+
+1. **MergeSort**: Time complexity O(n log n).
+2. **QuickSort**: Time complexity O(n log n) (on average), O(n^2) (worst case).
+3. **Deterministic Select**: Median of Medians algorithm for O(n) time complexity.
+4. **Closest Pair**: Divide-and-conquer approach for finding the closest pair of points in O(n log n) time.
+
+### Future Improvements
+
+- Optimizations for sorting algorithms.
+- Further testing and validation for edge cases.
+
+
